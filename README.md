@@ -1,8 +1,17 @@
 # RPG-TEXTO-PYTHON🎮
 Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei esse projeto com o objetivo de melhorar minha lógica de programação e aprender programação orientada a objeto.
 
-## como funciona o jogo🎮
-o Jogo é de PVP de turnos, Multijogador local , podendo vários jogadores jogarem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogadrem juntos
+🧩 Funcionalidades
+
+- Sistema de combate com dados 🎲
+- Inventário 🎒
+- Multiplayer local 👥
+- Eventos aleatórios (em breve)
+- Loja (em breve)
+- NPC (em breve)
+
+## 🎮 Como funciona o jogo
+o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadores joguem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogadrem juntos
 
 <img width="690" height="215" alt="Captura de tela 2026-05-15 140015" src="https://github.com/user-attachments/assets/6b0b825d-8427-475f-9169-d81d5272dc5a" />
 
@@ -12,21 +21,42 @@ ao entrar o jogo a primeira coisa que você faz é informar quantos jogadores te
 
 essa é a tela principal, onde o jogador poderá ATACAR, ver a LOJA ou ver o INVENTÁRIO
 
-## COMBATE
+## ⚔️COMBATE⚔️
 
-No combate o jogador vai jogar o dado de 20 lados, se cair um número maior que 10 ele ataca, se não ele erra o golpe, bônus de agilidade pode ajudar a acertar os golpes.
+No combate o jogador vai jogar o dado de 20 lados (dado de agilidade), se cair um número maior que 10 ele ataca, 
+pra atacar ele vai jogar mais um dado, de 10 lados (dado de ataque), que vai ser o dano do jogador
 
-pra atacar ele vai jogar mais um dado, de 10 lados, que vai ser o dano do jogador, se ele tiver algum bônus de ataque será somado ao dano total.
+### Dado de agilidade🎲💨
+o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado, o dano será dobrado!
 
-## Loja 
+### dado de ataque 🎲⚔️
+Define o dano do jogador, somando bônus e equipamentos.
+## 🪙 Loja
 
 (em breve)
 
-## Inventário
+## 🎒 Inventário
 <img width="493" height="302" alt="Captura de tela 2026-05-15 140605" src="https://github.com/user-attachments/assets/50a4a11e-abb4-4998-b07d-9266d50fbd65" />
 
-no inventário aparece todos os itens do jogador, e quais itens ele tá equipado, ele também poderá equipar outros itens
+O inventário mostra todos os itens do jogador e permite equipá-los.
 
+# 🕹️ como posso jogar o jogo? 
+
+<img width="1164" height="660" alt="Captura de tela 2026-05-15 183953" src="https://github.com/user-attachments/assets/7969432f-5bb2-46b9-9ddb-5a277659bddb" />
+
+Você pode baixar todos os arquivos clicando em Code e baixando o zip, depois é só extrair. você precisa ter o Python instalado na sua máquina. pra rodar o jogo é só abrir o main.py em alguma IDE (visual studio code, Pycharm e etc) em breve eu vou fazer um .exe do jogo :)
+
+
+🤝 Contribuição
+
+Contribuições são bem-vindas!
+
+- Faça um fork
+- Crie uma branch
+- Faça alterações
+- Envie um Pull Request
+
+  Vou adorar ver o código de vocês para novas funcionalidades :D
 
 
 
