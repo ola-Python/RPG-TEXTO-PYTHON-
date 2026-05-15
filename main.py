@@ -14,7 +14,7 @@ jogatual = 0
 espada = Equipamento("Espada comum",5,8,0,"arma")
 espada2 = Equipamento("Faca ",3,8,0,"arma")
 anel = Equipamento("Anel mágico",1,5,4,"anel")
-anel2 = Equipamento("Anel brabo",1,5,45,"anel")
+anel2 = Equipamento("Anel comum",1,5,45,"anel")
 
 jogadores[0].adicionar_item_inventario(anel2)
 jogadores[0].adicionar_item_inventario(espada)
