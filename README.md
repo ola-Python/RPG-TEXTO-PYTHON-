@@ -47,7 +47,7 @@ O inventário mostra todos os itens do jogador e permite equipá-los.
 Você pode baixar todos os arquivos clicando em Code e baixando o zip, depois é só extrair. você precisa ter o Python instalado na sua máquina. pra rodar o jogo é só abrir o main.py em alguma IDE (visual studio code, Pycharm e etc) em breve eu vou fazer um .exe do jogo :)
 
 
-#🤝 ajude na programação
+# 🤝 ajude na programação
 
 Contribuições são bem-vindas!
 
