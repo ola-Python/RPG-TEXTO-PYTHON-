@@ -11,7 +11,7 @@ Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei 
 - NPC (em breve)
 
 ## 🎮 Como funciona o jogo
-o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadores joguem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogadrem juntos
+o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadores joguem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogarem juntos
 
 <img width="690" height="215" alt="Captura de tela 2026-05-15 140015" src="https://github.com/user-attachments/assets/6b0b825d-8427-475f-9169-d81d5272dc5a" />
 
@@ -47,7 +47,7 @@ O inventário mostra todos os itens do jogador e permite equipá-los.
 Você pode baixar todos os arquivos clicando em Code e baixando o zip, depois é só extrair. você precisa ter o Python instalado na sua máquina. pra rodar o jogo é só abrir o main.py em alguma IDE (visual studio code, Pycharm e etc) em breve eu vou fazer um .exe do jogo :)
 
 
-🤝 Contribuição
+#🤝 ajude na programação
 
 Contribuições são bem-vindas!
 
@@ -56,7 +56,8 @@ Contribuições são bem-vindas!
 - Faça alterações
 - Envie um Pull Request
 
-  Vou adorar ver o código de vocês para novas funcionalidades :D
+Esse é um projeto feito por um Estudante de programação para outros estudantes ou amantes de programação, então eu te incentivo a baixar o projeto, ver como tudo foi feito, editar o código, fazer testes, crie novas features do seu jeito, você pode até postar no seu github, eu adoraria ver os seus projetos :)
+
 
 
 
