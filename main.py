@@ -30,7 +30,7 @@ while True :
     if jogatual >= len(jogadores):
         jogatual = 0
     print(f"""
-    vez do jogador {jogadores[jogatual].nome}       hp: {jogadores[jogatual].hp}
+    vez do {jogadores[jogatual].nome}       hp: {jogadores[jogatual].hp}
     [1] Atacar
     [2] Loja
     [3] Ver inventário
