@@ -12,7 +12,12 @@ class Combate :
             for i in range (self.qj) :
                 if i != self.indice :
                     print(f"- [{i}] {self.jogadores[i].nome}")
-            ialvo = int (input ("Escolha quem você vai atacar"))
+            ialvo = -1
+            while ialvo < 0 or ialvo >= self.qj or ialvo == self.indice :
+                try :
+                    ialvo = int (input ("Escolha quem você vai atacar"))
+                except ValueError :
+                    ialvo = -1
         else  :
             for i in range (self.qj) :
                 if i != self.indice :
@@ -29,6 +34,3 @@ class Combate :
             print(f"{self.alvo.nome} perdeu {danotot} de HP!")
         else :
             print("Errou o dano!")
-
-
-
