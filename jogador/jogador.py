@@ -51,6 +51,7 @@ class Jogador :
         opc = 0
         fim = len(self.inventario)
         while opc != fim :
+            from partida import Partida
             for i, item in  enumerate(self.inventario) :
                 print(f"-[{i}] {item.nome}  dano:{item.dano}  agilidade:{item.agilidade}  tipo:{item.tipo}")
             print(f"-[{fim}] Saída")
@@ -58,9 +59,10 @@ class Jogador :
                 print(f"Arma equipada : {self.arma.nome}")
             if self.anel :
                 print(f"Anel equipado : {self.anel.nome}")
-            opc = int (input ("> "))
-            if opc == fim :
+            opc = Partida.validar_opc(lista=self.inventario)
+            if opc == None :
                 return
+
             if self.inventario[opc].tipo == "arma" or self.inventario[opc].tipo == "anel" :
                 self.equipar(self.inventario[opc])
 

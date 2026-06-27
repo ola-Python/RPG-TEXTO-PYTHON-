@@ -40,5 +40,24 @@ class Partida :
 
         return False
 
+    @classmethod
+    def validar_opc(cls,lista=None,mensagem=">",mnsgvazio="lista vazia"):
+        if not lista:
+            print(mnsgvazio)
+            return None
+        fim = len(lista)
+        opc = None
+        while opc != fim:
+            try :
+                opc = int (input(mensagem))
+                if opc >=0 and opc < fim :
+                    return  opc
+            except ValueError :
+                print("Digite um valor válido")
+                if opc == fim :
+                    return None
+
+
+
 
 

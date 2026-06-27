@@ -8,11 +8,22 @@ class Combate :
         self.alvo:Jogador = None  #-> jogador que será atacado
 
     def escolher_alvo(self):
+        from partida import Partida
         if self.qj > 2 :
-            for i in range (self.qj) :
-                if i != self.indice :
-                    print(f"- [{i}] {self.jogadores[i].nome}")
-            ialvo = int (input ("Escolha quem você vai atacar"))
+
+            while  True :
+                for i in range(self.qj):
+                    if i != self.indice:
+                        print(f"- [{i}] {self.jogadores[i].nome}")
+                try:
+                    ialvo =  int (input ("Escolha quem você vai atacar"))
+                    if ialvo > self.qj-1 or ialvo < 0 :
+                        continue
+                    else :
+                        self.alvo = self.jogadores[ialvo]
+                        break
+                except ValueError :
+                    print("Digite um valor válido")
         else  :
             for i in range (self.qj) :
                 if i != self.indice :
