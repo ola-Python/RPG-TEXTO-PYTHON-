@@ -41,11 +41,24 @@ class Equipamento :
         )
 
 
-espada = Equipamento.gerarEquipamento(turno=65)
-espada2 = Equipamento.gerarEquipamento(turno=65)
-espada3 = Equipamento.gerarEquipamento(turno=65)
-espada4 = Equipamento.gerarEquipamento(turno=65)
+# Este bloco serve apenas para testes da geração de equipamentos.
+# O uso de "if __name__ == '__main__'" garante que ele seja executado
+# somente quando este arquivo for iniciado diretamente.
+#
+# Dessa forma, ao importar a classe Equipamento em outros módulos,
+# nenhum equipamento será criado e nenhuma informação será impressa
+# no terminal automaticamente.
 
-equipamentos = [espada,espada2,espada3,espada4]
-for equip in equipamentos :
-    print(f"{equip.nome} {equip.raridade} tem {equip.dano} de dano e custa {equip.valor}")
+if __name__ == "__main__":
+    espada = Equipamento.gerarEquipamento(turno=65)
+    espada2 = Equipamento.gerarEquipamento(turno=65)
+    espada3 = Equipamento.gerarEquipamento(turno=65)
+    espada4 = Equipamento.gerarEquipamento(turno=65)
+
+    equipamentos = [espada, espada2, espada3, espada4]
+
+    for equip in equipamentos:
+        print(
+            f"{equip.nome} {equip.raridade} "
+            f"tem {equip.dano} de dano e custa {equip.valor}"
+        )
