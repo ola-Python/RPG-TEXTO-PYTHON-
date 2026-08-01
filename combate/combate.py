@@ -1,3 +1,5 @@
+from time import sleep
+
 from jogador import Jogador
 class Combate :
     def __init__(self,jog,jogadores,indice):
@@ -14,14 +16,20 @@ class Combate :
             while  True :
                 for i in range(self.qj):
                     if i != self.indice:
-                        print(f"- [{i}] {self.jogadores[i].nome}")
+                        print(f"{f"[ {i} ]":<5} {self.jogadores[i].nome}")
+                print(f"{"[-1 ]":<5} Voltar")
                 try:
                     ialvo =  int (input ("Escolha quem você vai atacar"))
+                    if ialvo == -1 :
+                        return False
+                    if ialvo == self.indice :
+                        print("Você não pode se atacar!")
+                        continue
                     if ialvo > self.qj-1 or ialvo < 0 :
                         continue
                     else :
                         self.alvo = self.jogadores[ialvo]
-                        break
+                        return True
                 except ValueError :
                     print("Digite um valor válido")
         else  :
@@ -29,9 +37,11 @@ class Combate :
                 if i != self.indice :
                     ialvo = i
         self.alvo = self.jogadores[ialvo]
+        return True
 
     def atacar (self) :
-        self.escolher_alvo()
+        if not self.escolher_alvo() :
+            return
         d20 = self.jog.d20()
         if d20 > 10 :
             d10 = self.jog.d10()
@@ -40,6 +50,9 @@ class Combate :
             print(f"{self.alvo.nome} perdeu {danotot} de HP!")
         else :
             print("Errou o dano!")
+        sleep(1.5)
+
+        return True
 
 
 

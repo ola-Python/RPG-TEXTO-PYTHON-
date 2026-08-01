@@ -15,14 +15,13 @@ while True :
     except ValueError :
         print("Digite um valor válido")
 #hp = int (input ("Hp dos jogadores :"))
-jogadores : list[Jogador] = Partida.registrar_jogadores(qj=qj,hp=50)
+jogadores : list[Jogador] = Partida.registrar_jogadores(qj=qj,hp=10)
 partida = Partida(jogadores)
 
 jogatual = 0
 
 
-turno = 1
-rodada = 1
+turno = 5
 loja = Loja()
 while True :
     partida.verificar_mortos()
@@ -32,18 +31,21 @@ while True :
         jogatual = 0 #TESTE
     jog = jogadores[jogatual] #Jogador atual
     loja.turno = turno
-    Partida.menu(jog=jog, jogadores=jogadores,turno=turno)
-    opc = Partida.validar_opc([1,2,3,4],"Sua opção:")
+    print(f"""
+    TURNO : {turno}
+    vez do jogador {jogadores[jogatual].nome}       hp: {jogadores[jogatual].hp}
+    [1] Atacar
+    [2] Loja
+    [3] Ver inventário
+    [4] + 30 moedas (teste)
+    """)
+    opc = Partida.validar_opc([1,2,3,4  ,5],"Sua opção:")
 
     if opc == 1 :
         combate = Combate(jog=jogadores[jogatual],jogadores=jogadores,indice=jogatual)
-        if combate.atacar() :
-            Partida.ganhar_moeda(rodada=rodada, jog=jog)
-            jogatual = (jogatual + 1) % len(jogadores)
-            if jogatual == 0 :
-                loja.chance_att_loja()
-                rodada +=1
-            turno += 1
+        combate.atacar()
+        jogatual = (jogatual + 1) % len(jogadores)
+        turno += 1
 
 
     if opc == 2 :
@@ -51,3 +53,6 @@ while True :
 
     if opc == 3 :
         jogadores[jogatual].mostrar_inventario()
+
+    if opc == 4:
+        jog.moedas += 30

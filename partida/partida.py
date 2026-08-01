@@ -1,3 +1,6 @@
+import random
+from time import sleep
+
 from jogador import Jogador
 class Partida :
     def __init__(self,jogadores:Jogador):
@@ -13,6 +16,29 @@ class Partida :
             jogadores.append(Jogador(nome, hp))
         return jogadores
 
+    @classmethod
+    def menu(cls, jogadores: list[Jogador], jog: Jogador, turno):
+        print("-=" * 30)
+        print("JOGADORES:")
+        for j in jogadores:
+            print(f"{j.nome:<15} HP: {j.hp:>3}    Moedas: {j.moedas:>3}")
+        print("-" * 60)
+        print(f"""
+TURNO : {turno}
+vez do jogador {jog.nome}   hp: {jog.hp}    Moedas: {jog.moedas}     
+{"-=" * 30}
+[1] Atacar      [2] Loja        [3] Ver inventário""")
+        print("-=" * 30)
+        print("ARMA EQUIPADA⚔️ : ", end="")
+        if jog.arma:
+            print(jog.arma.nome)
+        else:
+            print("Nenhuma", end="   ")
+        print("ANEL EQUIPADO 💍:", end="")
+        if jog.anel:
+            print(jog.anel.nome)
+        else:
+            print("Nenhum")
     def verificar_mortos (self) :
         for jogador in self.jogadores[:] :
             if jogador.hp <=0 :
@@ -28,7 +54,16 @@ class Partida :
             print("Lista de mortos :")
             for morto in self.mortos :
                 print(morto.nome)
-
+    @classmethod
+    def ganhar_moeda(cls,jog:Jogador,rodada):
+        moedamax = int(4 + rodada / 4)
+        fim = 3
+        moeda = random.randint(1,moedamax)
+        chance = random.randint(1,fim)
+        if chance == 1 :
+            print(f"{jog.nome} ganhou {moeda} moedas!")
+            jog.moedas += moeda
+            sleep(1.5)
     def fim_partida (self):
         if len(self.jogadores) <=1 :
             if self.jogadores[0].hp >= 1 :
@@ -47,15 +82,15 @@ class Partida :
             return None
         fim = len(lista)
         opc = None
-        while opc != fim:
+        while opc != -1:
             try :
                 opc = int (input(mensagem))
+                if opc == -1 :
+                    return None
                 if opc >=0 and opc < fim :
                     return  opc
             except ValueError :
                 print("Digite um valor válido")
-                if opc == fim :
-                    return None
 
 
 
