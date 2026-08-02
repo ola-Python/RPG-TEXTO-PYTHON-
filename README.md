@@ -59,7 +59,8 @@ de começo a loja começa vazia, apenas com 3 opções :
   
   ### Loja no turno 51 :
   <img width="720" height="300" alt="Captura de tela 2026-08-01 205146" src="https://github.com/user-attachments/assets/077a288f-f203-43b4-b06b-740c1bee729e" />
-  veja mais detalhes da programação da loja nesse [vídeo](https://youtu.be/nK_9r1_OSCA)
+
+veja mais detalhes da programação da loja nesse [vídeo](https://youtu.be/nK_9r1_OSCA)
 
 
 ## sistema de geração de equipamentos ⚔️
