@@ -10,7 +10,8 @@ Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei 
 - Inventário 🎒
 - Multiplayer local 👥
 - Eventos aleatórios (em breve)
-- Loja (em breve)
+- Geração de equipamentos ⚔️
+- Loja dinâmica 🪙
 - NPC (em breve)
 
 ## 🎮 Como funciona o jogo
@@ -20,7 +21,11 @@ o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadore
 
 ao entrar o jogo a primeira coisa que você faz é informar quantos jogadores terão na partida, o nome e o hp deles.
 
-<img width="807" height="276" alt="Captura de tela 2026-05-15 183248" src="https://github.com/user-attachments/assets/6c5efc13-8331-46a9-9b84-9cb3818b9ab3" />
+<img width="720" height="480" alt="Captura de tela 2026-08-01 210126" src="https://github.com/user-attachments/assets/ec4fc437-1be1-4a64-95a5-95bf17601436" />
+
+
+
+
 
 essa é a tela principal, onde o jogador poderá ATACAR, ver a LOJA ou ver o INVENTÁRIO
 
@@ -36,12 +41,40 @@ o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o 
 Define o dano do jogador, somando bônus e equipamentos.
 ## 🪙 Loja
 
-(em breve)
+<img width="720" height="480" alt="Captura de tela 2026-08-01 205521" src="https://github.com/user-attachments/assets/18fb8c7a-0cfc-49e3-ba70-7ea26b281cf3" />
+
+de começo a loja começa vazia, apenas com 3 opções :
+- Comprar slot
+- atualizar loja
+- sair
+
+  cada rodada tem uma chance de 33% da loja atualizar, ela começa com apenas 3 slots (3 itens).
+  a loja contém o estoque compartilhado entre os jogadores, então se um jogador comprar algum item, ele vai sumir pra todos.
+
+  A loja é totalmente dinâmica, os itens vão ficando melhores conforme os turnos vão passando :
+
+  ### loja no turno 1 :
+  <img width="720" height="480" alt="Captura de tela 2026-08-01 205119" src="https://github.com/user-attachments/assets/f0def402-eb0b-4fe1-b184-1f01d0477472" />
+
+  
+  ### Loja no turno 51 :
+  <img width="720" height="300" alt="Captura de tela 2026-08-01 205146" src="https://github.com/user-attachments/assets/077a288f-f203-43b4-b06b-740c1bee729e" />
+  veja mais detalhes da programação da loja nesse [vídeo](https://youtu.be/nK_9r1_OSCA)
+
+
+## sistema de geração de equipamentos ⚔️
+
+o jogo escolhe um nome aleatório em uma lista de nomes, e uma raridade aleatória com peso (é mais difícil pegar equipamentos mais raros)
+
+o jogo multiplica um certo valor pelo turno, dependendo da raridade do equipamento (veja mais detalhes do código sobre criação de equipamentos aleatórios nesse [vídeo](https://youtu.be/IsAhmIPsct0)
+
+<img width="720" height="480" alt="Captura de tela 2026-08-01 210358" src="https://github.com/user-attachments/assets/b068338a-6279-4dfe-88e4-edd32bbe8737" />
+
 
 ## 🎒 Inventário
 <img width="493" height="302" alt="Captura de tela 2026-05-15 140605" src="https://github.com/user-attachments/assets/50a4a11e-abb4-4998-b07d-9266d50fbd65" />
 
-O inventário mostra todos os itens do jogador e permite equipá-los.
+O inventário mostra todos os itens do jogador e permite equipá-los ou desequipa-los.
 
 # 🕹️ como posso jogar o jogo? 
 
