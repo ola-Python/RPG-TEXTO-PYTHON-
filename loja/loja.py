@@ -1,7 +1,12 @@
+from rich.panel import Panel
+
 from equipamento import Equipamento
+from interface.funcoes import mostrar_mensagem, limpar_tela
 from jogador import Jogador
 from random import randint
 from time import sleep
+from rich import print
+from rich.table import Table
 class Loja:
     def __init__(self):
         self.estoque: list[Equipamento] = []
@@ -11,6 +16,7 @@ class Loja:
 
     def entrar_loja(self,jog:Jogador):
         while True :
+            limpar_tela()
             self.mostrar_loja(jog)
             if not self.compra(jog) :
                 break
@@ -18,7 +24,7 @@ class Loja:
 
     def tem_moeda (self,jog:Jogador,valor):
         if jog.moedas < valor :
-            print("Moedas insuficiente!")
+            print("[red bold]Moedas insuficiente![/]")
             sleep(0.6)
             return False
 
@@ -26,12 +32,15 @@ class Loja:
         return True
 
     def novo_equip(self):
-        equip = Equipamento.gerarEquipamento(self.turno )
+        if randint(0,1) == 0 :
+            equip = Equipamento.gerarArma(self.turno)
+        else :
+            equip = Equipamento.gerarAnel(self.turno)
         self.estoque.append(equip)
 
     def att_loja(self):
-        print("LOJA ATUALIZADA!")
-        sleep(0.6)
+        mostrar_mensagem("❇️LOJA ATUALIZADA!❇️",
+                         estilo="#FFF300",titulo="LOJA")
         self.estoque = []
         for c in range (0,self.slot) :
             self.novo_equip()
@@ -49,17 +58,31 @@ class Loja:
         return
 
     def mostrar_loja(self,jog:Jogador):
-        print("\n=== LOJA ===")
+        tabela = Table(title="[#FFF300] ▣ LOJA ▣ [/] ")
+        tabela.add_column("#") #indice
+        tabela.add_column("Nome")
+        tabela.add_column("Dano",style="red")
+        tabela.add_column("Agilidade",style="blue")
+        tabela.add_column("Preço",style="#FFF300")
+
         if self.estoque :
-            for i, e in enumerate (self.estoque) :
-                print(f"[{i}] {e.nome} {e.raridade} | Dano: {e.dano} | {e.valor} moedas")
+            for i, e in enumerate (self.estoque) : # e-> equipamento
+                tabela.add_row(str(i),
+                               str(e.nome),
+                               str(e.dano),
+                               str(e.agilidade),
+                               str(e.valor),)
+            print(tabela)
         else :
-            print("Nenhum equipamento disponível na loja!")
+            mostrar_mensagem(mensagem="[red]Nenhum equipamento disponível na loja![/]",
+                             titulo="[#FFF300] ▣ LOJA ▣ [/]",pausa=0)
         print("-="*30)
-        print(f"[-3] Comprar +1 slot ({self.preco_slot} moedas)")
-        print(f"[-2] Atualizar loja (5 moedas)")
-        print(f"[-1] Sair")
-        print(f"Suas moedas 🪙 : {jog.moedas}")
+        texto = f"[#2ECC71][-3] ✚ Comprar +1 slot[/] [#FFF300]({self.preco_slot} moedas)[/]"
+        texto += f"\n[#3498DB][-2] ✨ Atualizar loja[/] [#FFF300](5 moedas)[/]"
+        texto += f"\n[red][-1] ↩️ Voltar[/]"
+        texto +=f"\n[#FFF300]Suas [bold]moedas ✪ : {jog.moedas}[/][/]"
+        painel = Panel(texto,title="suas ações :",width=60)
+        print(painel)
 
     def compra(self, jog: Jogador):
         while True :
@@ -72,7 +95,7 @@ class Loja:
                     break #valor válido, pode continuar
 
             except ValueError :
-                print("Digite um valor válido")
+                print("[red]Digite um valor válido[/]")
 
         if indice == -1 :
             return #sair da loja
