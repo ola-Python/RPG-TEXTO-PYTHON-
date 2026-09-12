@@ -1,3 +1,63 @@
+# NOVIDADES 
+
+* 🎨 **Interface totalmente reformulada com Rich**
+
+  * Painéis e tabelas para organizar as informações
+  * Cores para destacar diferentes estados do jogo
+  * Emojis e símbolos na interface
+  * Exibição dos jogadores, equipamentos, moedas e turno
+
+* 💬 **Novo sistema de mensagens**
+
+  * Mensagens exibidas linha por linha
+  * Limpeza automática do terminal para criar uma apresentação mais dinâmica
+
+* ❤️ **Sistema visual de HP**
+
+  * HP exibido em diferentes cores de acordo com a quantidade de vida
+  * Verde para HP normal
+  * Laranja para HP entre 20 e 30
+  * Vermelho para HP abaixo de 20
+
+* 💍 **Novo sistema de anéis**
+
+  * Criado um gerador de anéis
+  * Anéis possuem valores de agilidade
+  * Anéis lendários e míticos também podem aumentar o dano
+
+* 🍀 **Sistema de sorte**
+
+  * Cada jogador possui um atributo de sorte
+  * A sorte influencia a probabilidade de determinados eventos
+  * Sorte pode ser aumentada durante a partida
+  * Limite máximo de sorte definido em 2.0
+
+* 🎲 **Sistema de eventos aleatórios**
+
+  * Eventos podem acontecer durante a partida
+  * Existe uma chance de um evento ocorrer ao final de cada turno
+  * Eventos podem afetar um jogador ou todos os jogadores
+  * A sorte influencia se determinados acontecimentos serão positivos ou negativos
+
+  * 🪙 **Eventos de moedas**
+  
+    * Jogadores podem ganhar ou perder moedas
+    * A quantidade é baseada no turno atual
+    * O sistema impede que o jogador fique com moedas negativas
+  
+  * ❤️ **Eventos de HP**
+  
+    * Jogadores podem recuperar HP
+    * Jogadores também podem perder HP
+    * Os valores são definidos de forma aleatória com base no turno
+
+* ⚖️ **Balanceamento e testes**
+
+  * Adicionados testes durante o desenvolvimento dos novos sistemas
+  * Ajustes na apresentação das mensagens e eventos
+  * Correções de erros encontrados durante os testes
+
+
 # RPG-TEXTO-PYTHON🎮
 Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei esse projeto com o objetivo de melhorar minha lógica de programação e aprender programação orientada a objeto.
 
