@@ -45,8 +45,6 @@ class Combate :
             for i in range (self.qj) :
                 if i != self.indice :
                     ialvo = i
-            else :
-                return False
         self.alvo = self.jogadores[ialvo]
         return True
 
