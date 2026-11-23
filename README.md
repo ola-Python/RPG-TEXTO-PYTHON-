@@ -15,9 +15,10 @@ Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei 
 - Sistema de combate com dados 🎲
 - Inventário 🎒
 - Multiplayer local 👥
-- Eventos aleatórios (em breve)
+- Eventos aleatórios 
 - Geração de equipamentos ⚔️
 - Loja dinâmica 🪙
+- Efeitos sonoros 🔊
 - NPC (em breve)
 
 ## 🎮 Como funciona o jogo
@@ -128,6 +129,51 @@ Diferentemente de um equipamento com durabilidade infinita, a armadura possui um
 Isso faz com que a armadura seja um recurso que precisa ser administrado durante a partida. Embora ofereça proteção contra ataques, o jogador precisa considerar sua durabilidade e estar preparado para quando ela quebrar.
 
 A sorte adiciona mais uma camada estratégica à partida: além de investir em atributos ofensivos e defensivos, o jogador também pode apostar em melhorar suas chances nos acontecimentos aleatórios.
+
+
+## 🎲 Eventos Aleatórios
+Os eventos aleatórios são acontecimentos inesperados que podem mudar o rumo de uma partida. Eles adicionam imprevisibilidade ao PvP, fazendo com que os jogadores precisem lidar tanto com oportunidades quanto com situações desfavoráveis.
+
+A cada execução do sistema, existe 30% de chance de um evento acontecer. Quando isso ocorre, o jogo sorteia quem será afetado:
+- 80% de chance: apenas um jogador é escolhido.
+- 20% de chance: todos os jogadores são afetados.
+Atualmente, existem três tipos de eventos:
+
+### 💰 Evento de Moedas
+O jogador escolhido pode ganhar ou perder moedas com base em um teste de sorte.
+- Com sorte, recebe uma quantidade aleatória de moedas.
+- Com azar, perde uma quantidade aleatória de moedas.
+- A quantidade de moedas envolvida aumenta conforme o número de turnos.
+- O saldo de moedas nunca fica negativo.
+  
+### ❤️ Evento de Vida (HP)
+Um acontecimento inesperado pode beneficiar ou prejudicar o jogador.
+- Com sorte: o jogador encontra uma forma de recuperar vida, recebendo uma quantidade aleatória de HP.
+- Com azar: sofre algum acidente ou acontecimento inesperado, recebendo dano.
+- O dano e a quantidade de cura são influenciados pelo número de turnos.
+- O jogador também recebe XP relacionado ao resultado do evento.
+Os acontecimentos podem variar, como encontrar uma poção de cura, comer um pastel com caldo de cana, ser atingido por um raio ou até levar uma tijolada.
+
+### 🎰 Evento do Cassino
+Um cassino aparece oferecendo ao jogador a oportunidade de apostar suas moedas.
+- O jogador escolhe quanto deseja apostar.
+- Um multiplicador aleatório entre 1.0x e 2.0x é definido.
+- A chance de vitória é influenciada pelo atributo sorte.
+- Se vencer, recebe uma recompensa calculada com base na aposta e no multiplicador.
+- Se perder, perde o valor apostado.
+O jogador também pode escolher não apostar, preservando suas moedas.
+
+
+### ⚡ Eventos que evoluem com a partida
+Uma característica importante do sistema é que os eventos acompanham o progresso da partida.
+
+Conforme os turnos avançam, as quantidades de moedas envolvidas, os valores de cura e os danos possíveis podem aumentar. Isso faz com que os acontecimentos aleatórios tenham impacto progressivamente maior durante o jogo.
+
+### 🎮 Por que esse sistema existe?
+
+Os eventos aleatórios impedem que as partidas sigam sempre o mesmo roteiro. Um jogador pode encontrar uma oportunidade de recuperação, ganhar moedas inesperadamente ou sofrer um grande prejuízo.
+
+A combinação entre sorte, risco e acontecimentos imprevisíveis cria situações inesperadas e momentos caóticos, tornando cada partida diferente da anterior.
 
 # 🕹️ como posso jogar o jogo? 
 
