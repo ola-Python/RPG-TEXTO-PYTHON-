@@ -50,11 +50,21 @@ essa é a tela principal, onde o jogador poderá ATACAR, ver a LOJA ou ver o INV
 No combate o jogador vai jogar o dado de 20 lados (dado de agilidade), se cair um número maior que 10 ele ataca, 
 pra atacar ele vai jogar mais um dado, de 10 lados (dado de ataque), que vai ser o dano do jogador
 
-### Dado de agilidade🎲💨
-o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado, o dano será dobrado!. pra cada 10 de bônus de agilidade aumenta 1 no dado.
+## Dado de agilidade🎲💨
+o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado (sem bonus) ativará o modo crítico (multiplica o dano em 1.5X até 3X no máximo).
 
-### dado de ataque 🎲⚔️
-Define o dano do jogador, somando bônus e equipamentos.
+###⚡ Agilidade e chance de crítico
+A agilidade possui uma função ainda mais importante: ela também influencia as chances de ativar ataques especiais!
+
+A cada 7 pontos de bônus de agilidade, o limite máximo do D20 aumenta em 1, podendo chegar até 30.
+
+Como os ataques especiais são ativados ao obter 20 ou mais no dado, aumentar a agilidade também aumenta indiretamente a probabilidade de conseguir um crítico.
+
+Isso cria uma possibilidade interessante de build: investir em agilidade não significa apenas melhorar seus testes, mas também aumentar suas oportunidades de causar danos devastadores!
+
+
+## dado de ataque 🎲⚔️
+determina o dano causado. O valor máximo do dado pode aumentar com melhorias e equipamentos.
 ## 🪙 Loja
 
 <img width="1565" height="811" alt="image" src="https://github.com/user-attachments/assets/9b82a850-57d9-4d4a-a44f-34dc26c7380f" />
@@ -95,6 +105,12 @@ o jogo multiplica um certo valor pelo turno, dependendo da raridade do equipamen
 
 o preço do equipamento será 70% do seu valor.
 
+## 🔥 Dificuldade dinâmica
+O jogo não permanece igual do começo ao fim.
+
+Conforme a partida avança, os desafios aumentam, os eventos ficam mais perigosos e a loja passa a oferecer equipamentos mais fortes.
+
+O objetivo é evitar que os jogadores fiquem estagnados e fazer com que cada turno tenha importância.
 
 
 ## 🎒 Inventário
