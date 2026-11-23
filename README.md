@@ -21,6 +21,14 @@ Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei 
 - Efeitos sonoros 🔊
 - NPC (em breve)
 
+  # 🕹️ como posso baixar o jogo? 
+
+[![TerminalPVP](https://github.com/user-attachments/assets/6477111c-7a16-4446-bc54-82278f8b6750)](https://ola-python.itch.io/terminal-pvp)
+
+Acesse a página no Itch.io, para baixar o jogo : https://ola-python.itch.io/terminal-pvp
+
+
+
 ## 🎮 Como funciona o jogo
 o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadores joguem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogarem juntos
 
@@ -175,13 +183,9 @@ Os eventos aleatórios impedem que as partidas sigam sempre o mesmo roteiro. Um 
 
 A combinação entre sorte, risco e acontecimentos imprevisíveis cria situações inesperadas e momentos caóticos, tornando cada partida diferente da anterior.
 
-# 🕹️ como posso jogar o jogo? 
-
-<img width="1855" height="887" alt="image" src="https://github.com/user-attachments/assets/6477111c-7a16-4446-bc54-82278f8b6750" />
 
 
 
-Acesse a página no Itch.io, para baixar o jogo : https://ola-python.itch.io/terminal-pvp
 
 
 # 🤝 ajude na programação
