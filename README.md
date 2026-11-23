@@ -53,7 +53,7 @@ pra atacar ele vai jogar mais um dado, de 10 lados (dado de ataque), que vai ser
 ## Dado de agilidade🎲💨
 o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado (sem bonus) ativará o modo crítico (multiplica o dano em 1.5X até 3X no máximo).
 
-###⚡ Agilidade e chance de crítico
+### ⚡ Agilidade e chance de crítico
 A agilidade possui uma função ainda mais importante: ela também influencia as chances de ativar ataques especiais!
 
 A cada 7 pontos de bônus de agilidade, o limite máximo do D20 aumenta em 1, podendo chegar até 30.
