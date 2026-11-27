@@ -65,6 +65,10 @@ class Combate :
             som.errou_ataque()
             mostrar_mensagem(mensagem="[bold]ERROU O DANO[/]",titulo=":(",estilo="red")
 
+
+        # Ganhar xp após o ataque
+        self.jog.ganharXp(d20)
+
         return True
 
 

@@ -36,6 +36,8 @@ def mostrar_acoes(jogatual:Jogador,turno):
     espada = jogatual.arma if jogatual.arma else "Sem arma"
     anel = jogatual.anel if jogatual.anel else "Sem anel"
     armadura = jogatual.armadura if jogatual.armadura else "Sem armadura"
+    chance_critico = (jogatual.d20max - (20 - jogatual.chancecritico) + 1) / jogatual.d20max * 100
+    chance_critico = round(chance_critico, 1)
     texto = Text()
     texto.append("[1] ⚔️ Atacar\n",style="bold red")
     texto.append("[2] ▣ Loja\n",style="bold #FFF300")
@@ -43,16 +45,39 @@ def mostrar_acoes(jogatual:Jogador,turno):
     opcoesPanel = Panel(texto,height=5,width=25,title="⚔ AÇÕES")
     status = f"[#0BC900]HP : [bold]{jogatual.hp}[/][/]"
     status +=f"    [#FFF300]Moedas ✪ : [bold]{jogatual.moedas}[/][/]"
+    status += f"    [#0EEE7E]bônus[/] [#FFF300 bold]moedas✪ : {jogatual.bonusMoedas}[/]"
     status += f"    [#0EEE7E]Sorte: [bold]{jogatual.sorte}[/]x[/]"
     status += f"\n[red]DANO = (1 - {jogatual.d10max}) + {jogatual.dano}[/]"
+    status +=f"          [bold red on black]CRÍTICO :{jogatual.critico}X  {chance_critico}%[/] "
     status += f"\n[blue]AGILIDADE = (1 - {jogatual.d20max}) + {jogatual.agilidade}[/]"
     status+= f"\nEspada : {espada}"
-    status+=f"\nAnel   : {anel}"
+    status+=f"      Anel   : {anel}"
     status += f"\nArmadura : {armadura}"
     statusPainel = Panel(status,
-                         title=f"[bold red on black]{jogatual.nome}[/]",
-                         width=50,height=8,box=HEAVY,subtitle=f"⏰ [bold red on black]Turno :{turno}[/]")
+                         title=f"[bold red on black]{jogatual.nome}[/] [bold blue on black] NÍVEL {jogatual.level} ({jogatual.xp}/{jogatual.XPMAX})[/]",
+                         width=70,height=7,box=HEAVY,subtitle=f"⏰ [bold red on black]Turno :{turno}[/]")
     print(Columns([opcoesPanel,statusPainel]))
+
+def statusJogador(jogatual:Jogador,turno) :
+    espada = jogatual.arma if jogatual.arma else "Sem arma"
+    anel = jogatual.anel if jogatual.anel else "Sem anel"
+    armadura = jogatual.armadura if jogatual.armadura else "Sem armadura"
+    chance_critico = (jogatual.d20max-(20 - jogatual.chancecritico) + 1) / jogatual.d20max * 100
+    chance_critico = round(chance_critico, 1)
+    status = f"[#0BC900]HP : [bold]{jogatual.hp}[/][/]"
+    status += f"    [#FFF300]Moedas ✪ : [bold]{jogatual.moedas}[/][/]"
+    status += f"    [#0EEE7E]bônus[/] [#FFF300 bold]moedas✪ : {jogatual.bonusMoedas}[/]"
+    status += f"    [#0EEE7E]Sorte: [bold]{jogatual.sorte}[/]x[/]"
+    status += f"\n[red]DANO = (1 - {jogatual.d10max}) + {jogatual.dano}[/]"
+    status += f"          [bold red on black]CRÍTICO :{jogatual.critico}X  {chance_critico}%[/] "
+    status += f"\n[blue]AGILIDADE = (1 - {jogatual.d20max}) + {jogatual.agilidade}[/]"
+    status += f"\nEspada : {espada}"
+    status += f"      Anel   : {anel}"
+    status += f"\nArmadura : {armadura}"
+    statusPainel = Panel(status,
+                         title=f"[bold red on black]{jogatual.nome}[/] [bold blue on black] NÍVEL {jogatual.level} ({jogatual.xp}/{jogatual.XPMAX})[/]",
+                         width=70, height=7, box=HEAVY, subtitle=f"⏰ [bold red on black]Turno :{turno}[/]")
+    return statusPainel
 
 
 

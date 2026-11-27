@@ -99,7 +99,8 @@ class Loja:
                                            str(e),
                                            str(e.defesa),
                                            str(e.valor))
-            print(Columns([tabelaarma,tabelaanel,tabelaarmadura]))
+            print(Columns([tabelaarma,tabelaanel]))
+            print(tabelaarmadura)
 
         else :
             mostrar_mensagem(mensagem="[red]Nenhum equipamento disponível na loja![/]",
@@ -126,6 +127,7 @@ class Loja:
                 print("[red]Digite um valor válido[/]")
 
         if indice == -1 :
+            som.menuvoltarsom.play()
             return #sair da loja
 
         elif indice == -2 :
@@ -142,6 +144,7 @@ class Loja:
             if self.tem_moeda(jog=jog,valor=self.estoque[indice].valor) :
                 som.compra.play()
                 jog.adicionar_item_inventario(self.estoque[indice])
+                jog.ganharXp(self.estoque[indice].valor)
                 self.estoque.remove(self.estoque[indice])
         return True
 

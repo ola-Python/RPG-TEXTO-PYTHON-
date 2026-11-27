@@ -4,9 +4,12 @@ from interface.funcoes import mostrar_mensagem
 from random import randint,choice,choices
 
 
+
+
 class Armadura(Equipamento) :
     def __init__(self,nome,defesa,durabilidade,raridade,valor):
         super().__init__(nome=nome,raridade=raridade,tipo="armadura",valor=valor)
+
 
         self.durabilidade = durabilidade
         self.durabilidademax = durabilidade
@@ -15,7 +18,7 @@ class Armadura(Equipamento) :
     def __str__(self):
         return f"{Armadura.cores_raridade[self.raridade]}{self.nome}({self.durabilidade}/{self.durabilidademax})"
 
-    def absorverDano(self,dano):
+    def absorverDano(self,dano,jog):
         dano_absorvido = min(dano,self.defesa)
         dano_absorvido = min(dano_absorvido,self.durabilidade)
 

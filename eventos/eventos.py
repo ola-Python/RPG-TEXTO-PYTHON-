@@ -24,8 +24,8 @@ class EventoAleatorio :
             mostrar_mensagem("TODOS OS JOGADORES FORAM ESCOLHIDOS!",
                              titulo="EVENTO ALEATÓRIO",pausa=1.5,largura=70)
 
-    def escolher_evento(self):
-        eventos = {
+    def escolher_evento(self): #método usado apenas na classe
+        eventos = { #métodos da classe + chance de aparecer
             self.moeda:35,
             self.hp:50,
             self.cassino:15
@@ -38,12 +38,16 @@ class EventoAleatorio :
 
         evento()
 
-    def executar(self):
-        if random() < 0.30 :
+    def executar(self): #método chamado no código principal
+        #ele pode receber o turno no futuro ao inves de ser um self
+
+        if random() < 0.30 : #30% de chance de executar um evento
             som.evento.play()
             mostrar_mensagem(titulo="EVENTO ALEATÓRIO",
                              mensagem="ESCOLHENDO EVENTO ALEATÓRIO. . .",
                              pausa=2.2,largura=70)
+
+            #escolhe um ou todos os jogadores e executa o evento
             self.escolher_jogador()
             self.escolher_evento()
 
@@ -137,7 +141,7 @@ class EventoAleatorio :
 
     def hp(self):
         for jogador in self.alvo : #jogador = jogador atual da lista
-            dano = False
+            dano = False #pra verificar se o jogador ganhou ou perdeu hp
             texto = ""
             if jogador.roletar_sorte(45) : #se ele tiver sorte
                 acoes = [("pocaomine",f"{jogador.nome} encontrou e bebeu uma poção de cura"),
@@ -155,6 +159,7 @@ class EventoAleatorio :
                 texto += f"{acao} [green]aumentando [bold]{hp}[/] de hp[/]"
                 texto += f"\n[green]{jogador.hp}[/] -> [green]{jogador.hp+ hp}[/]"
                 jogador.hp += hp
+                xp = hp
             else :
                 acoes = [("raio",f"{jogador.nome} foi atingido por um raio"),
                          ("bonk",f"{jogador.nome} escorregou e caiu de cabeça"),
@@ -177,5 +182,7 @@ class EventoAleatorio :
             mostrar_mensagem(texto,titulo="EVENTO ALEATÓRIO",pausa=2.4,largura=70)
             if dano :
                 jogador.receber_dano(hp)
+                xp = int( hp * 1.5)
             sleep(0.5)
+            jogador.ganharXp(xp)
 

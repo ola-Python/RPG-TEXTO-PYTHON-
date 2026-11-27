@@ -17,6 +17,7 @@ class Partida :
             nome = str (input (f"Nome do jogador {i+1}: ")).strip().title()
             #nome = f"Jogador {i + 1}"
             jogadores.append(Jogador(nome, hp))
+            som.selecionarPersonagem.play()
         return jogadores
 
     def verificar_mortos (self) :
@@ -35,15 +36,16 @@ class Partida :
                 print(morto.nome)
     @classmethod
     def ganhar_moeda(cls,jog:Jogador,rodada):
-        moedamax = int(4 + rodada / 2)
-        moeda = random.randint(1,moedamax)
+        moedamin = int(1 + jog.bonusMoedas * 0.70)
+        moedamax = int(4 + rodada / 2) + jog.bonusMoedas
+        moeda = random.randint(moedamin,moedamax)
         chance = random.random()
         if chance < 0.35 :
             som.moedas.play()
             mostrar_mensagem(f"{jog.nome} ganhou {moeda} moedas!",estilo="#FFF300",
                              pausa=1,titulo="RECOMPENSA")
             jog.moedas += moeda
-            sleep(1.5)
+            sleep(0.4)
     def fim_partida (self):
         if len(self.jogadores) ==1 :
             if self.jogadores[0].hp >= 1 :
@@ -60,21 +62,31 @@ class Partida :
         return False
 
     @classmethod
-    def validar_opc(cls,lista=None,mensagem=">",mnsgvazio="lista vazia"):
+    def validar_opc(cls,lista=None,mensagem=">",mnsgvazio="lista vazia",saida=True):
         if not lista:
             print(mnsgvazio)
             return None
         fim = len(lista)
         opc = None
-        while opc != -1:
-            try :
-                opc = int (input(mensagem))
-                if opc == -1 :
-                    return None
-                if opc >=0 and opc < fim :
-                    return  opc
-            except ValueError :
-                print("[red]Digite um valor válido[/]")
+        if saida :
+            while opc != -1:
+                try :
+                    opc = int (input(mensagem))
+                    if opc == -1 :
+                        som.menuvoltarsom.play()
+                        return None
+                    if opc >=0 and opc < fim :
+                        return  opc
+                except ValueError :
+                    print("[red]Digite um valor válido[/]")
+        else :
+            while True :
+                try :
+                    opc = int (input(mensagem))
+                    if opc >=0 and opc < fim :
+                        return  opc
+                except ValueError :
+                    print("[red]Digite um valor válido[/]")
 
 
 
