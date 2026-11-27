@@ -1,61 +1,7 @@
-# NOVIDADES 
+# NOVIDADES 💫
 
-* 🎨 **Interface totalmente reformulada com Rich**
-
-  * Painéis e tabelas para organizar as informações
-  * Cores para destacar diferentes estados do jogo
-  * Emojis e símbolos na interface
-  * Exibição dos jogadores, equipamentos, moedas e turno
-
-* 💬 **Novo sistema de mensagens**
-
-  * Mensagens exibidas linha por linha
-  * Limpeza automática do terminal para criar uma apresentação mais dinâmica
-
-* ❤️ **Sistema visual de HP**
-
-  * HP exibido em diferentes cores de acordo com a quantidade de vida
-  * Verde para HP normal
-  * Laranja para HP entre 20 e 30
-  * Vermelho para HP abaixo de 20
-
-* 💍 **Novo sistema de anéis**
-
-  * Criado um gerador de anéis
-  * Anéis possuem valores de agilidade
-  * Anéis lendários e míticos também podem aumentar o dano
-
-* 🍀 **Sistema de sorte**
-
-  * Cada jogador possui um atributo de sorte
-  * A sorte influencia a probabilidade de determinados eventos
-  * Sorte pode ser aumentada durante a partida
-  * Limite máximo de sorte definido em 2.0
-
-* 🎲 **Sistema de eventos aleatórios**
-
-  * Eventos podem acontecer durante a partida
-  * Existe uma chance de um evento ocorrer ao final de cada turno
-  * Eventos podem afetar um jogador ou todos os jogadores
-  * A sorte influencia se determinados acontecimentos serão positivos ou negativos
-
-  * 🪙 **Eventos de moedas**
-  
-    * Jogadores podem ganhar ou perder moedas
-    * A quantidade é baseada no turno atual
-    * O sistema impede que o jogador fique com moedas negativas
-  
-  * ❤️ **Eventos de HP**
-  
-    * Jogadores podem recuperar HP
-    * Jogadores também podem perder HP
-    * Os valores são definidos de forma aleatória com base no turno
-
-* ⚖️ **Balanceamento e testes**
-
-  * Adicionados testes durante o desenvolvimento dos novos sistemas
-  * Ajustes na apresentação das mensagens e eventos
-  * Correções de erros encontrados durante os testes
+(em breve)
+    
 
 
 # RPG-TEXTO-PYTHON🎮
@@ -69,10 +15,19 @@ Esse é um RPG de texto feito em Python, ele não tem visual nem sprites, criei 
 - Sistema de combate com dados 🎲
 - Inventário 🎒
 - Multiplayer local 👥
-- Eventos aleatórios (em breve)
+- Eventos aleatórios 
 - Geração de equipamentos ⚔️
 - Loja dinâmica 🪙
+- Efeitos sonoros 🔊
 - NPC (em breve)
+
+  # 🕹️ como posso baixar o jogo? 
+
+[![TerminalPVP](https://github.com/user-attachments/assets/6477111c-7a16-4446-bc54-82278f8b6750)](https://ola-python.itch.io/terminal-pvp)
+
+Acesse a página no Itch.io, para baixar o jogo : https://ola-python.itch.io/terminal-pvp
+
+
 
 ## 🎮 Como funciona o jogo
 o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadores joguem na mesma máquina, ou o jogador principal compartilhar sua tela em qualquer software de comunicação (discord, whatsApp,skype e etc) pra jogarem juntos
@@ -81,7 +36,8 @@ o Jogo é de PVP de turnos, Multijogador local , permitindo que vários jogadore
 
 ao entrar o jogo a primeira coisa que você faz é informar quantos jogadores terão na partida, o nome e o hp deles.
 
-<img width="720" height="480" alt="Captura de tela 2026-08-01 210126" src="https://github.com/user-attachments/assets/ec4fc437-1be1-4a64-95a5-95bf17601436" />
+<img width="1505" height="841" alt="image" src="https://github.com/user-attachments/assets/32909986-8ce5-4b3b-9f71-79a83c75d3b6" />
+
 
 
 
@@ -94,14 +50,25 @@ essa é a tela principal, onde o jogador poderá ATACAR, ver a LOJA ou ver o INV
 No combate o jogador vai jogar o dado de 20 lados (dado de agilidade), se cair um número maior que 10 ele ataca, 
 pra atacar ele vai jogar mais um dado, de 10 lados (dado de ataque), que vai ser o dano do jogador
 
-### Dado de agilidade🎲💨
-o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado, o dano será dobrado!
+## Dado de agilidade🎲💨
+o dado de agilidade serve para ver se o jogador vai acertar ou errar o golpe, o bônus de agilidade pode ajudar a acertar os golpes, se o jogador tirar 20 no dado (sem bonus) ativará o modo crítico (multiplica o dano em 1.5X até 3X no máximo).
 
-### dado de ataque 🎲⚔️
-Define o dano do jogador, somando bônus e equipamentos.
+### ⚡ Agilidade e chance de crítico
+A agilidade possui uma função ainda mais importante: ela também influencia as chances de ativar ataques especiais!
+
+A cada 7 pontos de bônus de agilidade, o limite máximo do D20 aumenta em 1, podendo chegar até 30.
+
+Como os ataques especiais são ativados ao obter 20 ou mais no dado, aumentar a agilidade também aumenta indiretamente a probabilidade de conseguir um crítico.
+
+Isso cria uma possibilidade interessante de build: investir em agilidade não significa apenas melhorar seus testes, mas também aumentar suas oportunidades de causar danos devastadores!
+
+
+## dado de ataque 🎲⚔️
+determina o dano causado. O valor máximo do dado pode aumentar com melhorias e equipamentos.
 ## 🪙 Loja
 
-<img width="720" height="480" alt="Captura de tela 2026-08-01 205521" src="https://github.com/user-attachments/assets/18fb8c7a-0cfc-49e3-ba70-7ea26b281cf3" />
+<img width="1565" height="811" alt="image" src="https://github.com/user-attachments/assets/9b82a850-57d9-4d4a-a44f-34dc26c7380f" />
+
 
 de começo a loja começa vazia, apenas com 3 opções :
 - Comprar slot
@@ -114,11 +81,13 @@ de começo a loja começa vazia, apenas com 3 opções :
   A loja é totalmente dinâmica, os itens vão ficando melhores conforme os turnos vão passando :
 
   ### loja no turno 1 :
-  <img width="720" height="480" alt="Captura de tela 2026-08-01 205119" src="https://github.com/user-attachments/assets/f0def402-eb0b-4fe1-b184-1f01d0477472" />
+ <img width="1470" height="846" alt="image" src="https://github.com/user-attachments/assets/d993f26f-a027-4ac5-b42c-97a8ac33cdbf" />
+
 
   
   ### Loja no turno 51 :
-  <img width="720" height="300" alt="Captura de tela 2026-08-01 205146" src="https://github.com/user-attachments/assets/077a288f-f203-43b4-b06b-740c1bee729e" />
+ <img width="1469" height="853" alt="image" src="https://github.com/user-attachments/assets/b2733d41-aaa8-41c2-8819-59f93a509631" />
+
 
 veja mais detalhes da programação da loja nesse [vídeo](https://youtu.be/nK_9r1_OSCA)
 
@@ -127,21 +96,112 @@ veja mais detalhes da programação da loja nesse [vídeo](https://youtu.be/nK_9
 
 o jogo escolhe um nome aleatório em uma lista de nomes, e uma raridade aleatória com peso (é mais difícil pegar equipamentos mais raros)
 
-o jogo multiplica um certo valor pelo turno, dependendo da raridade do equipamento (veja mais detalhes do código sobre criação de equipamentos aleatórios nesse [vídeo](https://youtu.be/IsAhmIPsct0)
+o jogo multiplica um certo valor pelo turno, dependendo da raridade do equipamento, esse valor será seu dano máximo, após isso ele vai escolher um número aleatório entre o dano mínimo e o dano máximo (veja mais detalhes do código sobre criação de equipamentos aleatórios nesse [vídeo](https://youtu.be/IsAhmIPsct0)
 
 <img width="720" height="480" alt="Captura de tela 2026-08-01 210358" src="https://github.com/user-attachments/assets/b068338a-6279-4dfe-88e4-edd32bbe8737" />
 
 
+<img width="569" height="103" alt="image" src="https://github.com/user-attachments/assets/d30a6849-7342-4671-aacb-727d553fd72e" />
+
+o preço do equipamento será 70% do seu valor.
+
+## 🔥 Dificuldade dinâmica
+O jogo não permanece igual do começo ao fim.
+
+Conforme a partida avança, os desafios aumentam, os eventos ficam mais perigosos e a loja passa a oferecer equipamentos mais fortes.
+
+O objetivo é evitar que os jogadores fiquem estagnados e fazer com que cada turno tenha importância.
+
+
 ## 🎒 Inventário
-<img width="493" height="302" alt="Captura de tela 2026-05-15 140605" src="https://github.com/user-attachments/assets/50a4a11e-abb4-4998-b07d-9266d50fbd65" />
+<img width="1064" height="706" alt="image" src="https://github.com/user-attachments/assets/fd42ed3f-e851-4a40-b9ca-85f7360c63d1" />
+
 
 O inventário mostra todos os itens do jogador e permite equipá-los ou desequipa-los.
 
-# 🕹️ como posso jogar o jogo? 
+## ⬆️ Sistema de Upgrades
+O sistema de upgrades permite que os jogadores evoluam seus personagens ao longo da partida, tornando-os progressivamente mais fortes.
 
-<img width="720" height="480" alt="Captura de tela 2026-05-15 183953" src="https://github.com/user-attachments/assets/7969432f-5bb2-46b9-9ddb-5a277659bddb" />
+Ao acumular experiência (XP) suficiente, o jogador sobe de nível e recebe 3 aprimoramentos aleatórios. Cada upgrade pode melhorar diferentes atributos do personagem, permitindo que cada partida tenha combinações e possibilidades diferentes.
 
-Você pode baixar todos os arquivos clicando em Code e baixando o zip, depois é só extrair. você precisa ter o Python instalado na sua máquina. pra rodar o jogo é só abrir o main.py em alguma IDE (visual studio code, Pycharm e etc) em breve eu vou fazer um .exe do jogo :)
+Entre os atributos que podem receber melhorias estão:
+- ⚔️ Dano no dado: aumenta o valor máximo do dado utilizado no cálculo do ataque.
+- 💥 Dano bônus: aumenta o dano adicional causado pelo jogador.
+- 💰 Bônus de moedas: aumenta o bônus relacionado à obtenção de moedas.
+- 🏃 Agilidade: melhora os atributos relacionados à agilidade do personagem.
+- 🍀 Sorte: aumenta a sorte do jogador, respeitando o limite máximo de 1.6.
+- 🎯 Crítico: aumenta o multiplicador de dano dos ataques críticos.
+- 🔥 Chance de crítico: aumenta a possibilidade de conseguir um ataque crítico.
+
+  <img width="635" height="214" alt="image" src="https://github.com/user-attachments/assets/e497d96b-4149-4786-8f4f-df72c2b3c111" />
+  
+
+
+  <img width="453" height="393" alt="image" src="https://github.com/user-attachments/assets/c6400d31-8a85-4225-8738-507cac7b0893" />
+
+
+##🍀 Atributo: Sorte
+A sorte é um atributo que influencia os acontecimentos aleatórios durante a partida. Ela pode favorecer o jogador em determinadas situações, tornando os resultados menos previsíveis e adicionando um elemento de surpresa ao combate.
+
+O jogador pode aumentar seu atributo de sorte por meio dos aprimoramentos recebidos ao subir de nível. Entretanto, esse atributo possui um limite máximo de 1.6, evitando que seu crescimento seja ilimitado.
+
+## 🛡️ Armadura
+A armadura é um equipamento defensivo que ajuda o jogador a reduzir os danos recebidos durante os combates.
+
+Diferentemente de um equipamento com durabilidade infinita, a armadura possui um sistema de resistência: ao absorver dano, sua durabilidade é consumida. Quando ela se desgasta completamente, deixa de oferecer proteção.
+
+Isso faz com que a armadura seja um recurso que precisa ser administrado durante a partida. Embora ofereça proteção contra ataques, o jogador precisa considerar sua durabilidade e estar preparado para quando ela quebrar.
+
+A sorte adiciona mais uma camada estratégica à partida: além de investir em atributos ofensivos e defensivos, o jogador também pode apostar em melhorar suas chances nos acontecimentos aleatórios.
+
+
+## 🎲 Eventos Aleatórios
+Os eventos aleatórios são acontecimentos inesperados que podem mudar o rumo de uma partida. Eles adicionam imprevisibilidade ao PvP, fazendo com que os jogadores precisem lidar tanto com oportunidades quanto com situações desfavoráveis.
+
+A cada execução do sistema, existe 30% de chance de um evento acontecer. Quando isso ocorre, o jogo sorteia quem será afetado:
+- 80% de chance: apenas um jogador é escolhido.
+- 20% de chance: todos os jogadores são afetados.
+Atualmente, existem três tipos de eventos:
+
+### 💰 Evento de Moedas
+O jogador escolhido pode ganhar ou perder moedas com base em um teste de sorte.
+- Com sorte, recebe uma quantidade aleatória de moedas.
+- Com azar, perde uma quantidade aleatória de moedas.
+- A quantidade de moedas envolvida aumenta conforme o número de turnos.
+- O saldo de moedas nunca fica negativo.
+  
+### ❤️ Evento de Vida (HP)
+Um acontecimento inesperado pode beneficiar ou prejudicar o jogador.
+- Com sorte: o jogador encontra uma forma de recuperar vida, recebendo uma quantidade aleatória de HP.
+- Com azar: sofre algum acidente ou acontecimento inesperado, recebendo dano.
+- O dano e a quantidade de cura são influenciados pelo número de turnos.
+- O jogador também recebe XP relacionado ao resultado do evento.
+Os acontecimentos podem variar, como encontrar uma poção de cura, comer um pastel com caldo de cana, ser atingido por um raio ou até levar uma tijolada.
+
+### 🎰 Evento do Cassino
+Um cassino aparece oferecendo ao jogador a oportunidade de apostar suas moedas.
+- O jogador escolhe quanto deseja apostar.
+- Um multiplicador aleatório entre 1.0x e 2.0x é definido.
+- A chance de vitória é influenciada pelo atributo sorte.
+- Se vencer, recebe uma recompensa calculada com base na aposta e no multiplicador.
+- Se perder, perde o valor apostado.
+O jogador também pode escolher não apostar, preservando suas moedas.
+
+
+### ⚡ Eventos que evoluem com a partida
+Uma característica importante do sistema é que os eventos acompanham o progresso da partida.
+
+Conforme os turnos avançam, as quantidades de moedas envolvidas, os valores de cura e os danos possíveis podem aumentar. Isso faz com que os acontecimentos aleatórios tenham impacto progressivamente maior durante o jogo.
+
+### 🎮 Por que esse sistema existe?
+
+Os eventos aleatórios impedem que as partidas sigam sempre o mesmo roteiro. Um jogador pode encontrar uma oportunidade de recuperação, ganhar moedas inesperadamente ou sofrer um grande prejuízo.
+
+A combinação entre sorte, risco e acontecimentos imprevisíveis cria situações inesperadas e momentos caóticos, tornando cada partida diferente da anterior.
+
+
+
+
 
 
 # 🤝 ajude na programação
